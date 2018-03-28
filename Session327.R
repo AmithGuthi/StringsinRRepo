@@ -60,4 +60,39 @@ headers = str_sub(emails, end = breaks[,1])
 bodies = str_sub(emails, start = breaks[,2])
 
 
-cat(bodies[6])
+cat(bodies[2])
+
+
+
+fruit <- c("apple", "banana", "pear", "pineapple")
+
+
+str_detect(fruit, "a")
+#starts with
+str_detect(fruit, "^a")
+#Ends with 
+str_detect(fruit, "a$")
+
+str_detect(fruit, "[aeiou]")
+
+str_detect(fruit, "[a-d]")
+
+str_detect(fruit, "^a[a-z]*e$")
+
+
+telRaw = "as(444) 888 8787aksjdhjk"
+
+tel = str_detect(telRaw,"[(]*[0-9]{3}[)]*[-]*[ ]*[0-9]{3}[ ]*[-]*[0-9]{4}")
+cat(tel)
+
+
+zipRaw = "sdjh90056"
+
+zip = str_detect(zipRaw,"[0-9]{5}[-]*[0-9]*")
+cat(zip)
+
+
+#5
+
+str_extract_all(bodies,"[(]*[0-9]{3}[)]*[-]*[ ]*[0-9]{3}[ ]*[-]*[0-9]{4}")
+
